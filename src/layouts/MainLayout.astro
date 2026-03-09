@@ -1,0 +1,43 @@
+---
+import Navbar from "../components/Navbar.astro";
+
+import { ClientRouter } from 'astro:transitions'
+
+const site = "Shiro - Store";
+const lastUpdateYear = new Date().getFullYear();
+const lastUpdateMonth = new Date().getMonth() + 1;
+
+import "../styles/global.css";
+
+// Props
+interface Props {
+  title: string;
+  // isActive?: boolean;
+}
+const { title } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <ClientRouter/>
+
+  </head>
+  <body>
+
+    <Navbar/>
+
+    <main>
+
+      <slot/>
+      
+    </main>
+
+  </body>
+</html>

@@ -1,40 +1,28 @@
 ---
-const site = "Shiro - Store";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const headerTitle = "Shiro Store - Home";
+const pageTitle = "Shiro Store - Home";
 const lastUpdateYear = new Date().getFullYear();
 const lastUpdateMonth = new Date().getMonth() + 1;
+
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{site}</title>
-  </head>
-  <body>
-    <h1>{site}</h1>
+<MainLayout title={pageTitle}>
 
-	<p>Momento actual: {new Date().toLocaleTimeString()}</p>
-	<p id="current-time">Momento actual real: {}</p>
+    <h1>{headerTitle}</h1>
 
-    <footer>
-      <!-- Última Actualización: {lastUpdateMonth}/{lastUpdateYear} -->
-		Año: 2025
-    </footer>
+    <p>Momento actual: {new Date().toLocaleTimeString()}</p>
+    <p id="current-time">Momento actual real: {}</p>
 
     <script>
-		// Client Only
-		const footer = document.querySelector("footer") as HTMLElement;
-		const currentTimePara = document.querySelector("#current-time") as HTMLParagraphElement;
+      // Client Only
 
-		const current: number = new Date().getFullYear();
+      const currentTimePara = document.querySelector(
+        "#current-time",
+      ) as HTMLParagraphElement;
 
+      currentTimePara.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
+    </script>
 
-		footer.innerText = `Año: ${current}`;
-		currentTimePara.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
-
-	</script>
-  </body>
-</html>
+</MainLayout>

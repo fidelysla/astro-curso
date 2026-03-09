@@ -1,17 +1,18 @@
 ---
-
+import CustomTitle from "../components/CustomTitle.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Shiro - Tienda</title>
-	</head>
-	<body>
-		<h1>About</h1>
-	</body>
-</html>
+<MainLayout title="Shiro Store - Acerca">
+	
+  <h1>About</h1>
+
+  <CustomTitle title="This is a custom title" />
+
+</MainLayout>
+
+<style>
+  h1 {
+    color: red;
+  }
+</style>
