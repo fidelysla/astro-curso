@@ -1,4 +1,10 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "mikestead.dotenv",
+    "wallabyjs.console-ninja",
+    "inu1255.easy-snippet",
+    "usernamehw.errorlens"
+  ],
   "unwantedRecommendations": []
 }
