@@ -1,0 +1,41 @@
+---
+---
+
+<header class="bg-blue-500 text-white">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-6 h-16">
+
+    <!-- Logo -->
+    <a href="/" class="text-lg font-bold">
+      SHIRO
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button id="menu-btn" class="md:hidden text-2xl">
+      ☰
+    </button>
+
+    <!-- Menú desktop -->
+    <nav class="hidden md:flex gap-6">
+      <a href="/" class="hover:text-gray-200">Home</a>
+      <a href="/about" class="hover:text-gray-200">About</a>
+      <a href="/contact" class="hover:text-gray-200">Contacto</a>
+    </nav>
+
+  </div>
+
+  <!-- Menú mobile -->
+  <nav id="mobile-menu" class="hidden md:hidden flex-col bg-blue-600 px-6 py-4 space-y-3">
+    <a href="/" class="block">Home</a>
+    <a href="/about" class="block">About</a>
+    <a href="/contact" class="block">Contacto</a>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById("menu-btn") as HTMLElement;
+  const menu = document.getElementById("mobile-menu") as HTMLElement;
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
